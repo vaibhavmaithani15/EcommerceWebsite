@@ -1,4 +1,10 @@
 @charset "ISO-8859-1";
-body{
-	background:black;
+.custom-bg{
+	background:#b39ddb !important
+}
+body
+{
+    position: fixed; 
+    overflow-y: scroll;
+    width: 100%;
 }
