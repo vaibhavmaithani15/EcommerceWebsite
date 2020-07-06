@@ -22,30 +22,30 @@
 		<div class="card-body px-5">
 		
 			<h3 class="text-center display-5"> Sign Up Here </h3>
-		<form action="">
+		<form action="RegisterServlet" method="POST">
 		<div class="form-group">
     	<label for="name">User Name</label>
-    	<input type="text" class="form-control" id="name"  placeholder="Enter Name" required>
+    	<input name="user_name" type="text" class="form-control" id="name"  placeholder="Enter Name" required>
     	</div>
     	
     	<div class="form-group">
     	<label for="email">User Email</label>
-    	<input type="email" class="form-control" id="email"  placeholder="Enter Email" required>
+    	<input name="user_email" type="email" class="form-control" id="email"  placeholder="Enter Email" required>
     	</div>
     	
     	<div class="form-group">
-    	<label for="password">User Password</label>
-    	<input type="password" class="form-control" id="password"  placeholder="Enter Password" required>
+    	<label  for="password">User Password</label>
+    	<input name="user_password" type="password" class="form-control" id="password"  placeholder="Enter Password" required>
     	</div>
     	
     	<div class="form-group">
     	<label for="phone">User Phone</label>
-    	<input type="tel" class="form-control" id="phone"  placeholder="Enter Phone" required>
+    	<input name="user_phone" type="tel" class="form-control" id="phone"  placeholder="Enter Phone" required>
     	</div>
     	
     	<div class="form-group">
     	<label for="address">User Address</label>
-    	<textarea class="form-control" placeholder="Enter Your Address" required></textarea>
+    	<textarea name="user_address" class="form-control" placeholder="Enter Your Address" required></textarea>
     	</div>
     	
     	<div class="container text-center">
