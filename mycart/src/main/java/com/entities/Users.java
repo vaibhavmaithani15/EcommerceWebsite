@@ -24,6 +24,8 @@ public class Users {
 	private String userPic;
 	@Column(length = 1500, name = "user_address")
 	private String userAddress;
+	@Column(name="user_type")
+	private String userType;
 	@Override
 	public String toString() {
 		return "Users [userId=" + userId + ", userName=" + userName + ", userEmail=" + userEmail + ", userPassword="
@@ -76,8 +78,14 @@ public class Users {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	public String getUserType() {
+		return userType;
+	}
+	public void setUserType(String userType) {
+		this.userType = userType;
+	}
 	public Users(String userName, String userEmail, String userPassword, String userPhone, String userPic,
-			String userAddress) {
+			String userAddress,String userType) {
 		super();
 		this.userName = userName;
 		this.userEmail = userEmail;
@@ -85,9 +93,10 @@ public class Users {
 		this.userPhone = userPhone;
 		this.userPic = userPic;
 		this.userAddress = userAddress;
+		this.userType=userType;
 	}
 	public Users(int userId, String userName, String userEmail, String userPassword, String userPhone, String userPic,
-			String userAddress) {
+			String userAddress,String userType) {
 		super();
 		this.userId = userId;
 		this.userName = userName;
@@ -96,6 +105,7 @@ public class Users {
 		this.userPhone = userPhone;
 		this.userPic = userPic;
 		this.userAddress = userAddress;
+		this.userType=userType;
 	}
 	
 
