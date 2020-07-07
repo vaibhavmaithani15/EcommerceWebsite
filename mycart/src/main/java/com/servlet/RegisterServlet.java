@@ -12,6 +12,7 @@ import javax.servlet.http.HttpSession;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.exception.ConstraintViolationException;
 import org.hibernate.query.Query;
 
 import com.entities.Users;
@@ -19,6 +20,7 @@ import com.helper.FactoryProvider;
 
 public class RegisterServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	
 
 	public RegisterServlet() {
 		super();
@@ -33,8 +35,10 @@ public class RegisterServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		PrintWriter out = response.getWriter();
+		HttpSession httpSession = request.getSession();
 		try {
-			PrintWriter out = response.getWriter();
+		
 			String userName = request.getParameter("user_name");
 			String userEmail = request.getParameter("user_email");
 			String userPassword = request.getParameter("user_password");
@@ -50,18 +54,20 @@ public class RegisterServlet extends HttpServlet {
 			int userId = (Integer) hibernateSession.save(user);
 			tx.commit();
 			hibernateSession.close();
-			HttpSession httpSession = request.getSession();
 			httpSession.setAttribute("message", "Registration Successfull");
 			response.sendRedirect("register.jsp");
 			return;
 
 		}
-
-		catch (Exception e) {
+		catch (ConstraintViolationException e) {
 			e.printStackTrace();
-			HttpSession httpSession = request.getSession();
-			httpSession.setAttribute("errormessage", "Registration Unsuccessfull");
+//			HttpSession httpSession = request.getSession();
+			httpSession.setAttribute("errormessage", "Email Already Registered");
 			response.sendRedirect("register.jsp");
+		}
+		catch (Exception e) {
+			
+			
 		}
 	}
 }

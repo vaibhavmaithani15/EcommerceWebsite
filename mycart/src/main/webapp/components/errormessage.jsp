@@ -1,13 +1,13 @@
 
 <%
-	String message1 = (String) session.getAttribute("errormessage");
-	if (message1 != null) {
+	String errormessage = (String) session.getAttribute("errormessage");
+	if (errormessage != null) {
 		//Print Message
 		//	out.println(message);
 %>
 <div class="alert alert-danger alert-dismissible fade show"
 	role="alert">
-	<strong><%=message1%></strong>
+	<strong><%=errormessage%></strong>
 	<button type="button" class="close" data-dismiss="alert"
 		aria-label="Close">
 		<span aria-hidden="true">&times;</span>
@@ -15,7 +15,7 @@
 </div>
 
 <%
-	session.removeAttribute("message");
+	session.removeAttribute("errormessage");
 	}
 %>
 
