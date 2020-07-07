@@ -5,24 +5,23 @@
 <meta charset="ISO-8859-1">
 <title>New User</title>
  <!-- Css -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<%@include file="components/common_css_js.jsp" %> 
 <link rel="stylesheet" href="css/style.css">
-
-
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<script src="js/script.js"></script>    
+<script src="js/script.js"></script>
+   
 </head>
 <body>
 <%@include file="components/navbar.jsp" %> 
+
 <div class="row mt-5">
 	<div class="col-md-4 offset-md-4">
 	<div class="card">
+			<%@include file="components/message.jsp" %>
+			<%@include file="components/errormessage.jsp" %>
 		<div class="card-body px-5">
 		
 			<h3 class="text-center display-5"> Sign Up Here </h3>
-		<form action="RegisterServlet" method="POST">
+		<form id="user_form" action="RegisterServlet" method="POST">
 		<div class="form-group">
     	<label for="name">User Name</label>
     	<input name="user_name" type="text" class="form-control" id="name"  placeholder="Enter Name" required>
@@ -54,7 +53,7 @@
     	</div>
     	
     	<div class="container mt-3 mb-3 ">
-    		<a href="signup.jsp" class="btn btn-outline-primary btn-block">Already Hava A Account? Login Here</a>
+    		<a href="login.jsp" class="btn btn-outline-primary btn-block">Already Hava A Account? Login Here</a>
     		
     	</div>
     	
