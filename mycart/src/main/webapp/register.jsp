@@ -13,14 +13,17 @@
 <body>
 <%@include file="components/navbar.jsp" %> 
 
-<div class="row mt-5">
+<div class="row mt-2">
 	<div class="col-md-4 offset-md-4">
 	<div class="card">
 			<%@include file="components/message.jsp" %>
 			<%@include file="components/errormessage.jsp" %>
+			<div class="card-header custom-bg text-center">
+						<h3 class="display-5">Sign Up Here</h3>
+
+
+					</div>
 		<div class="card-body px-5">
-		
-			<h3 class="text-center display-5"> Sign Up Here </h3>
 		<form id="user_form" action="RegisterServlet" method="POST">
 		<div class="form-group">
     	<label for="name">User Name</label>
