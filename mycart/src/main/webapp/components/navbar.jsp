@@ -4,7 +4,7 @@
 %>
 
 
-<nav class="navbar navbar-expand-lg navbar-dark custom-bg">
+<nav class="navbar navbar-expand-lg navbar-light custom-bg">
 	<div class="container">
 		<a class="navbar-brand" href="index.jsp">MyCart</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -43,7 +43,7 @@
 				<%
 					if (user1 == null) {
 				%>
-				 <li class="nav-item active"><a class="nav-link"
+				<li class="nav-item active"><a class="nav-link"
 					href="login.jsp">Login </a></li>
 				<li class="nav-item active"><a class="nav-link"
 					href="register.jsp">Register </a></li>
@@ -54,16 +54,21 @@
 					else {
 				%>
 
-				<li class="nav-item active"><a class="nav-link" href="#"> <%=user1.getUserName()%></a>
-				</li>
-				<li class="nav-item active"><a class="nav-link"
-					href="LogoutServlet">Logout</a></li>
+				<li class="nav-item active"><a class="nav-link" href="#"> <i
+						class="fas fa-user"></i> <%=user1.getUserName()%>
+				</a></li>
+
+				<li class="nav-item"><a href="LogoutServlet" class="nav-link">
+						<i class="fas fa-user-times"></i> Logout
+				</a></li>
+				<!-- <li class="nav-item active"><a class="nav-link"
+					href="LogoutServlet">Logout</a></li> -->
 
 				<%
 					}
 				%>
 
-				
+
 			</ul>
 
 		</div>
