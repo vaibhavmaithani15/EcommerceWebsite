@@ -8,4 +8,14 @@ body
     position: fixed; 
     overflow-y: scroll;
     width: 100%;
+  
+}
+.admin .card{
+	border:1px solid #b39ddb;
+	
+}
+
+.admin .card:hover {
+	background: #e2e2e2;
+	cursor: pointer;
 }
