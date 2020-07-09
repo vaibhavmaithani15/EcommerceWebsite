@@ -1,3 +1,7 @@
+<%@page import="com.entities.Category"%>
+<%@page import="java.util.List"%>
+<%@page import="com.helper.FactoryProvider"%>
+<%@page import="com.DAO.CategoryDAO"%>
 <%@page import="com.entities.Users"%>
 <%
 	Users user = (Users) session.getAttribute("current_user");
@@ -29,6 +33,12 @@
 <body>
 	<%@include file="components/navbar.jsp"%>
 	<div class="container admin">
+		<div class="container-fluid mt-3">
+			<%@include file="components/message.jsp"%>
+			<%@include file="components/errormessage.jsp"%>
+		</div>
+
+
 		<div class="row mt-3">
 			<div class="col-md-4">
 				<div class="card">
@@ -134,7 +144,8 @@
 					</button>
 				</div>
 				<div class="modal-body">
-					<form action="" method="POST">
+					<form action="ProductOperationServlet" method="POST">
+						<input type="hidden" name="operation" value="addcategory">
 
 						<div class="form-group">
 							<input type="text" class="form-control" name="catTitle"
@@ -179,7 +190,9 @@
 					</button>
 				</div>
 				<div class="modal-body">
-					<form method="POST" action="">
+					<form method="POST" action="ProductOperationServlet"
+						enctype="multipart/form-data">
+						<input type="hidden" name="operation" value="addproduct">
 
 						<div class="form-group">
 							<input type="text" class="form-control" name="productName"
@@ -191,14 +204,26 @@
 								name="productDescription" required></textarea>
 						</div>
 						<div class="form-group">
+							
 							<div class="custom-file">
-								<input type="file" class="custom-file-input" id="productImage"
-									name="productImage" /> <label for="image"
-									class="custom-file-label">Product
-									Image</label>
+								<input type="file" class="custom-file-input" id="image"
+									name="image" /> <label for="image" class="custom-file-label">Choose
+									File</label>
 							</div>
 							<small class="form-text text-muted">Max Size 3mb</small>
 						</div>
+
+
+
+
+						<!-- <div class="form-group">
+							<div class="custom-file">
+								<input type="file" class="custom-file-input" id="productImage"
+									name="productImage" required /> <label for="productImage"
+									class="custom-file-label">Product Image</label>
+							</div>
+							<small class="form-text text-muted">Max Size 3mb</small>
+						</div> -->
 						<div class="form-group">
 							<input type="number" class="form-control" name="productPrice"
 								placeholder="Enter Price" required />
@@ -211,10 +236,27 @@
 							<input type="number" class="form-control" name="productQuantity"
 								placeholder="Enter Quantity" required />
 						</div>
+
+
+						<!-- Category Drop down for Product -->
+						<%
+							CategoryDAO categoryDAO = new CategoryDAO(FactoryProvider.getFactory());
+							List<Category> list = categoryDAO.getCategories();
+						%>
 						<div class="form-group">
-							<input type="text" class="form-control" name="productCategory"
-								placeholder="Enter Product Category" required />
+							<select name="catId" class="form-control" id="">
+
+								<%
+									for (Category c : list) {
+								%>
+								<option value="<%=c.getCategoryId()%>"><%=c.getCategoryTitle()%></option>
+								<%
+									}
+								%>
+							</select>
 						</div>
+
+
 						<div class="container text-center">
 							<button class="btn btn-outline-success">Add Product</button>
 							<button type="button" class="btn btn-outline-primary"
