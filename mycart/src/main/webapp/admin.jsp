@@ -29,6 +29,12 @@
 <body>
 	<%@include file="components/navbar.jsp"%>
 	<div class="container admin">
+	<div class="container-fluid mt-3">
+	<%@include file="components/message.jsp" %>
+	<%@include file="components/errormessage.jsp" %>
+	</div>
+	
+	
 		<div class="row mt-3">
 			<div class="col-md-4">
 				<div class="card">
@@ -134,7 +140,8 @@
 					</button>
 				</div>
 				<div class="modal-body">
-					<form action="" method="POST">
+					<form action="ProductOperationServlet" method="POST">
+					<input type="hidden" name="operation" value="addcategory">
 
 						<div class="form-group">
 							<input type="text" class="form-control" name="catTitle"
@@ -180,6 +187,7 @@
 				</div>
 				<div class="modal-body">
 					<form method="POST" action="">
+					<input type="hidden" name="operation" value="addproduct">
 
 						<div class="form-group">
 							<input type="text" class="form-control" name="productName"
