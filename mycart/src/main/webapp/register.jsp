@@ -10,7 +10,7 @@
 <script src="js/script.js"></script>
    
 </head>
-<body>
+<body class="register-body">
 <%@include file="components/navbar.jsp" %> 
 
 <div class="row mt-2">

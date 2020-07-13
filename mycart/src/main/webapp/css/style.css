@@ -3,7 +3,7 @@
 	background:#b39ddb !important;
 
 }
-body
+.register-body
 {
     position: fixed; 
     overflow-y: scroll;
@@ -16,6 +16,18 @@ body
 }
 
 .admin .card:hover {
-	background: #e2e2e2;
+	background:#F8F8F8;
 	cursor: pointer;
+}
+.admin .card .hover-title:hover{
+	color: blue;
+} 
+.list-group-item-action.active{
+	background:#b39ddb !important;
+	border:#b39ddb;
+}
+.discount-label{
+	
+	!important;
+	
 }

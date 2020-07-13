@@ -91,5 +91,12 @@ public class Product {
 		this.pQuantity = pQuantity;
 	}
 	
+//	Calculate price after discount
+	public int getPriceAfterDiscount() {
+		int discount= (int) ((this.getpDiscount()/100.0)*this.getpPrice());
+		return this.getpPrice()-discount;
+		
+
+	}
 
 }
