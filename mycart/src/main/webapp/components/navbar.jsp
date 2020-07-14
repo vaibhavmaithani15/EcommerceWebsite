@@ -19,7 +19,7 @@
 				<li class="nav-item active"><a class="nav-link"
 					href="index.jsp">Home <span class="sr-only">(current)</span></a></li>
 
-				<li class="nav-item dropdown"><a
+			<!-- 	<li class="nav-item dropdown"><a
 					class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 					role="button" data-toggle="dropdown" aria-haspopup="true"
 					aria-expanded="false"> Categories </a>
@@ -28,7 +28,7 @@
 							class="dropdown-item" href="#">Another action</a>
 						<div class="dropdown-divider"></div>
 						<a class="dropdown-item" href="#">Something else here</a>
-					</div></li>
+					</div></li> -->
 
 			</ul>
 			<!--  <form class="form-inline my-2 my-lg-0 ">
@@ -38,14 +38,16 @@
 
 			<ul class="navbar-nav ml-auto">
 
-
+				<li class="nav-item active"><a class="nav-link" href="#" data-toggle="modal" data-target="#cart"><i
+						class="fa fa-cart-plus" style="font-size: 30px;"></i><span class="cart-items">(
+							0 )</span></a></li>
 
 				<%
 					if (user1 == null) {
 				%>
-				<li class="nav-item active"><a class="nav-link"
+				<li class="nav-item active"><a class=" mt-1 nav-link"
 					href="login.jsp">Login </a></li>
-				<li class="nav-item active"><a class="nav-link"
+				<li class="nav-item active"><a class=" mt-1 nav-link"
 					href="register.jsp">Register </a></li>
 
 				<%
@@ -54,11 +56,11 @@
 					else {
 				%>
 
-				<li class="nav-item active"><a class="nav-link" href="#"> <i
+				<li class="nav-item active"><a class=" mt-1 nav-link" href="<%= user1.getUserType().equals("admin")?"admin.jsp":"normal.jsp"%>"> <i
 						class="fas fa-user"></i> <%=user1.getUserName()%>
 				</a></li>
 
-				<li class="nav-item"><a href="LogoutServlet" class="nav-link">
+				<li class="nav-item"><a href="LogoutServlet" class="mt-1 nav-link">
 						<i class="fas fa-user-times"></i> Logout
 				</a></li>
 				<!-- <li class="nav-item active"><a class="nav-link"

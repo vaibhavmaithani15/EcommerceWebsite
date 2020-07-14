@@ -35,7 +35,9 @@
 </head>
 <body>
 <%@include file="components/navbar.jsp"%>
-<h1>This is normal user Panel</h1>
+<%
+response.sendRedirect("index.jsp");
+%>
 
 
 

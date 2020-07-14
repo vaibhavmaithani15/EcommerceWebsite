@@ -40,7 +40,7 @@
 				<div class="list-group mt-4">
 					<%-- <h1>Number of Category is <%= clist.size() %></h1> --%>
 					<a href="index.jsp?category=all" id="test1"
-						class="list-group-item list-group-item-action active">All
+						class="list-group-item list-group-item-action">All
 						Products</a> 
 
 					<%
@@ -50,25 +50,30 @@
 							int cat2=category.getCategoryId();
 						//	out.print(cat1+"<br>"+cat2);
 					%>
-						<a href="index.jsp?category=<%=category.getCategoryId()%>" onclick="setSelectedTestPlan();" id="test2" class="list-group-item list-group-item-action"><%=category.getCategoryTitle()%></a>
+						<a href="index.jsp?category=<%=category.getCategoryId()%>"  id="test2" class="list-group-item list-group-item-action"><%=category.getCategoryTitle()%></a>
 						
 					<%
 					if(cat1==null || cat1.trim().equals("all")){
 					//out.print("all/null");
 					%>	
-					
 					<!-- Java Script Dynamically Add class active to All Products -->
-						
-		
+					<script>
+					 document.getElementById("test1").classList.add("active"); 
+					
+					
+					</script>
 					<% 	
-					}else if(Integer.parseInt(cat1)==cat2){
-						
-						
-						
-						
-					//	out.print(cat1+"<br>"+cat2);
+					}else if(Integer.parseInt(cat1)==cat2){	
+				
 					%>
 					<!-- Java Script code to dynamically add class active according to id  -->
+					<script>
+					
+						/* document.getElementById("test2").classList.add("active"); */
+				
+					
+					</script>
+					
 					<% 
 						}
 					
@@ -123,5 +128,6 @@
 			</div>
 		</div>
 	</div>
+	<%@include file="components/common_modal.jsp" %>
 </body>
 </html>

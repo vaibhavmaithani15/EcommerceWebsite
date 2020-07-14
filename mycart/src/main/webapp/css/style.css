@@ -1,33 +1,93 @@
 @charset "ISO-8859-1";
-.custom-bg{
-	background:#b39ddb !important;
 
+.custom-bg {
+	background: #b39ddb !important;
 }
-.register-body
-{
-    position: fixed; 
-    overflow-y: scroll;
-    width: 100%;
-  
+
+.register-body {
+	position: fixed;
+	overflow-y: scroll;
+	width: 100%;
 }
-.admin .card{
-	border:1px solid #b39ddb;
-	
+
+.admin .card {
+	border: 1px solid #b39ddb;
 }
 
 .admin .card:hover {
-	background:#F8F8F8;
+	background: #F8F8F8;
 	cursor: pointer;
 }
-.admin .card .hover-title:hover{
+
+.admin .card .hover-title:hover {
 	color: blue;
-} 
-.list-group-item-action.active{
-	background:#b39ddb !important;
-	border:#b39ddb;
 }
-.discount-label{
+
+.list-group-item-action.active {
+	background: #b39ddb !important;
+	border: #b39ddb;
+}
+
+#toast3 {
+	visibility: hidden;
+	min-width: 300px;
+	position: fixed;
+	bottom: 30px;
+	left: 50%;
+	margin-left: -125px;
+	opacity: 0.7;
+	background-color: #333;
+	padding: 15px;
+	border-radius: 15px;
+	color: white;
+	text-align: center;
+	z-index: 1;
+	font-size: 14px;
+}
+
+#toast3.display {
+	visibility: visible;
+	animation: fadeIn 0.5s, fadeOut 0.5s 2.5s;
+}
+
+@keyframes fadeIn {from { bottom:0;
+	opacity: 0;
+}
+
+to {
+	bottom: 30px;
+	opacity: 0.7;
+}
+
+}
+@keyframes fadeOut {form { bottom:30px;
+	opacity: 0.7;
+}
+
+to {
+	bottom: 0;
+	opacity: 0;
+}
+
+}
+#toast {
+	display: none;
+}
+
+#toast1 {
+	display: none;
+}
+
+#toast.display {
+	display: block;
+}
+
+#toast1.display {
+	display: block;
+}
+
+/* .discount-label{
 	
 	!important;
 	
-}
+} */

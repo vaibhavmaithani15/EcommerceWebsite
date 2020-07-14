@@ -290,7 +290,8 @@ List<Users> list3=udao1.getUsers();
 	</div>
 
 	<!-- End Product Modal -->
-
+ 
+ <%@include file="components/common_modal.jsp" %>
 
 </body>
 </html>
