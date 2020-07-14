@@ -1,9 +1,12 @@
 package com.DAO;
 
+import java.util.List;
+
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
+import com.entities.Category;
 import com.entities.Users;
 
 public class UserDAO {
@@ -40,6 +43,12 @@ public UserDAO(SessionFactory factory) {
 		return  user;
 		
 	}
+	public List<Users> getUsers(){
+		Session session = this.factory.openSession();
+		Query query = session.createQuery("from Users");
+		List<Users> list = query.list();
+		return list;
+	} 
 	
 
 }

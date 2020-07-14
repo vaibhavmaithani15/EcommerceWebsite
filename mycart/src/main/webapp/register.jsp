@@ -10,13 +10,13 @@
 <script src="js/script.js"></script>
    
 </head>
-<body>
+<body class="register-body">
 <%@include file="components/navbar.jsp" %> 
 
 <div class="row mt-2">
 	<div class="col-md-4 offset-md-4">
 	<div class="card">
-			<%@include file="components/message.jsp" %>
+			 <%@include file="components/message.jsp" %>
 			<%@include file="components/errormessage.jsp" %>
 			<div class="card-header custom-bg text-center">
 						<h3 class="display-5">Sign Up Here</h3>
@@ -51,7 +51,7 @@
     	</div>
     	
     	<div class="container text-center">
-    		<button type="submit" class="btn btn-outline-success">Register</button>
+    		<button  type="submit" class="btn btn-outline-success">Register</button>
     		<button type="reset" class="btn btn-outline-warning">Reset</button>
     	</div>
     	

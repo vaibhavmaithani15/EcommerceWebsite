@@ -5,7 +5,7 @@
 		//Print Message
 		//	out.println(message);
 %>
-<div class="alert alert-danger alert-dismissible fade show"
+<div id="toast1" class="alert alert-danger alert-dismissible fade show"
 	role="alert">
 	<strong><%=errormessage%></strong>
 	<button type="button" class="close" data-dismiss="alert"

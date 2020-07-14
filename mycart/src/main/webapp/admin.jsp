@@ -1,3 +1,6 @@
+<%@page import="com.DAO.UserDAO"%>
+<%@page import="com.entities.Product"%>
+<%@page import="com.DAO.ProductDAO"%>
 <%@page import="com.entities.Category"%>
 <%@page import="java.util.List"%>
 <%@page import="com.helper.FactoryProvider"%>
@@ -37,7 +40,23 @@
 			<%@include file="components/message.jsp"%>
 			<%@include file="components/errormessage.jsp"%>
 		</div>
+		
+		<%! int count; %>
+<%
+CategoryDAO cdao1=new CategoryDAO(FactoryProvider.getFactory());
+ProductDAO pdao1=new ProductDAO(FactoryProvider.getFactory());
+UserDAO udao1=new UserDAO(FactoryProvider.getFactory());
 
+
+List<Category> list1=cdao1.getCategories();
+List<Product> list2=pdao1.getAllProducts();
+List<Users> list3=udao1.getUsers();
+  count=list1.size();
+  int count1=list2.size();
+  int count2=list3.size();
+
+
+%>
 
 		<div class="row mt-3">
 			<div class="col-md-4">
@@ -49,7 +68,7 @@
 								class="rounded mx-auto d-block img-fluid" alt="user_icon"
 								src="img/team.png">
 						</div>
-						<h1>2323232</h1>
+						<h1><%= count2 %></h1>
 						<h1 class="display-5 text-muted">Users</h1>
 
 					</div>
@@ -64,7 +83,7 @@
 								class="rounded mx-auto d-block img-fluid" alt="user_icon"
 								src="img/list.png">
 						</div>
-						<h1>322323</h1>
+						<h1><%=count %></h1>
 						<h1 class="display-5 text-muted">Categories</h1>
 
 					</div>
@@ -79,7 +98,7 @@
 								class="rounded mx-auto d-block img-fluid" alt="user_icon"
 								src="img/product.png">
 						</div>
-						<h1>322243</h1>
+						<h1><%= count1 %></h1>
 						<h1 class="display-5 text-muted">Products</h1>
 
 					</div>
@@ -271,7 +290,8 @@
 	</div>
 
 	<!-- End Product Modal -->
-
+ 
+ <%@include file="components/common_modal.jsp" %>
 
 </body>
 </html>
